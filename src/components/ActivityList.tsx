@@ -17,7 +17,7 @@ export default function ActivityList({ accountAddress }: { accountAddress: strin
   useEffect(() => {
     axios
       .get(
-        `https://api-goerli.etherscan.io/api?module=account&action=txlist&address=${accountAddress}&startblock=0&endblock=99999999&page=1&offset=10&sort=asc&apikey=98M2XSQPDZTGEI27Y2PPT8W1AW315RMPUY`
+        `https://api-goerli.etherscan.io/api?module=account&action=txlist&address=${accountAddress}&startblock=0&endblock=99999999&page=1&offset=10&sort=desc&apikey=98M2XSQPDZTGEI27Y2PPT8W1AW315RMPUY`
       )
       .then(({ data }) => setActivity(data.result))
   }, [accountAddress])

@@ -4,6 +4,7 @@ import { useAccounts } from "../hooks/useAccounts"
 import { useState } from "react"
 import ActivityList from "../components/ActivityList"
 import { useDynamicContext } from "@dynamic-labs/sdk-react"
+import { ethers } from "ethers"
 
 export default function WalletDetail() {
   const { primaryWallet } = useDynamicContext()
@@ -38,14 +39,13 @@ export default function WalletDetail() {
       const connector = await (primaryWallet as any)?.connector
       const signer = await connector?.getSigner()
       if (signer) {
-        console.log(signer, connector)
         const tx = await signer.sendTransaction({
-          from: accounts[0],
+          from: account.address,
           to: toAddress,
-          value: amount,
+          value: ethers.parseEther(amount as string),
         })
-        // const tx = await signer.request({  })
-        // setCurrentSignedMessage({ message, signedMessage: signature })
+        console.log(tx)
+        setTransactionResponse({ transactionHash: tx.hash })
         return
       }
     }

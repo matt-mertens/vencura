@@ -2,9 +2,8 @@ import { PlusSmallIcon } from "@heroicons/react/20/solid"
 import Button from "../components/ui/Button"
 import { useAccounts } from "../hooks/useAccounts"
 import AccountCard from "../components/AccountCard"
-import { Link } from "react-router-dom"
 
-export default function Home() {
+export default function Wallets() {
   const { accounts, createAccount } = useAccounts()
 
   return (
@@ -13,7 +12,7 @@ export default function Home() {
         {/* Secondary navigation */}
         <header className="pb-4 pt-6 sm:pb-6">
           <div className="mx-auto flex max-w-7xl flex-wrap items-center gap-6 px-4 sm:flex-nowrap sm:px-6 lg:px-8">
-            <h1 className="text-xl font-semibold leading-7 text-gray-900">Home</h1>
+            <h1 className="text-xl font-semibold leading-7 text-gray-900">Wallets</h1>
             <Button
               onClick={createAccount}
               className="ml-auto flex items-center gap-x-1 rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
@@ -41,12 +40,6 @@ export default function Home() {
       <div className="space-y-16 py-16 xl:space-y-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
-            <div className="flex items-center justify-between">
-              <h2 className="text-base font-semibold leading-7 text-gray-900">Wallets ({accounts.length})</h2>
-              <Link to="/wallets" className="text-sm font-semibold leading-6 text-indigo-600 hover:text-indigo-500">
-                View all<span className="sr-only">wallets</span>
-              </Link>
-            </div>
             <ul role="list" className="mt-6 grid grid-cols-1 gap-x-6 gap-y-8 lg:grid-cols-3 xl:gap-x-8">
               {accounts.map((account: any) => (
                 <AccountCard account={account} />
