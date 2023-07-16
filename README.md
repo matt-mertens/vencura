@@ -16,6 +16,7 @@ Create and managed custodial wallets as well as interact with connected non-cust
 - [Getting started](#getting-started)
 
 # Getting Started
+Currently the application is only built to work with the Ethereum Goerli test network
 
 ## Available Scripts
 
