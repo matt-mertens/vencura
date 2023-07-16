@@ -16,7 +16,7 @@ Create and managed custodial wallets as well as interact with connected non-cust
 - [Getting started](#getting-started)
 
 # Getting Started
-Currently the application is only built to work with the Ethereum Goerli test network
+Currently the application is only built to work with the Ethereum Goerli test network. Users can login using Dynamic with either an email or wallet. If the user logs in with a wallet they will be able to sign and send transactions with their non-custodial wallet as well. 
 
 ## Available Scripts
 
